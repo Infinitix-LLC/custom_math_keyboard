@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:math_keyboard/src/foundation/node.dart';
+import 'package:custom_math_keyboard/src/foundation/node.dart';
 
 /// Class representing a button configuration.
 abstract class KeyboardButtonConfig {

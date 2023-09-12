@@ -1,7 +1,7 @@
-## Unit testing in math_keyboard
+## Unit testing in custom_math_keyboard
 
 It should be obvious that we aim to unit test every possible unit in the
-`math_keyboard` package. This ranges from the `tex2math` converter to (where
+`custom_math_keyboard` package. This ranges from the `tex2math` converter to (where
 "unit tests" is used in the broader Flutter sense of widget tests) the math
 field and keyboard.
 

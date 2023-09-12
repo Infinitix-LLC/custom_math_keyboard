@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:math_keyboard/src/widgets/math_field.dart';
-import 'package:math_keyboard/src/widgets/math_keyboard.dart';
+import 'package:custom_math_keyboard/src/widgets/math_field.dart';
+import 'package:custom_math_keyboard/src/widgets/custom_math_keyboard.dart';
 
 /// A [FormField] that contains a [MathField].
 ///
