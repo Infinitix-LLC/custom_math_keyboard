@@ -1,7 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:math_expressions/math_expressions.dart';
-import 'package:math_keyboard/src/foundation/node.dart';
+import 'package:custom_math_keyboard/src/foundation/node.dart';
 
 /// Converts the input [mathExpression] to a [TeXNode].
 TeXNode convertMathExpressionToTeXNode(Expression mathExpression) {

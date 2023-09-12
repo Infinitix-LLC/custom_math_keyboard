@@ -9,7 +9,7 @@ class CustomKeyIcons {
   CustomKeyIcons._();
 
   static const _kFontFam = 'CustomKeyIcons';
-  static const String? _kFontPkg = 'math_keyboard';
+  static const String? _kFontPkg = 'custom_math_keyboard';
 
   /// Key icon used for indicating multiple symbols.
   static const IconData key_symbols =

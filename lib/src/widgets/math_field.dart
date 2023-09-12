@@ -3,12 +3,12 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_math_fork/flutter_math.dart';
 import 'package:math_expressions/math_expressions.dart';
-import 'package:math_keyboard/src/foundation/keyboard_button.dart';
-import 'package:math_keyboard/src/foundation/math2tex.dart';
-import 'package:math_keyboard/src/foundation/node.dart';
-import 'package:math_keyboard/src/widgets/decimal_separator.dart';
-import 'package:math_keyboard/src/widgets/math_keyboard.dart';
-import 'package:math_keyboard/src/widgets/view_insets.dart';
+import 'package:custom_math_keyboard/src/foundation/keyboard_button.dart';
+import 'package:custom_math_keyboard/src/foundation/math2tex.dart';
+import 'package:custom_math_keyboard/src/foundation/node.dart';
+import 'package:custom_math_keyboard/src/widgets/decimal_separator.dart';
+import 'package:custom_math_keyboard/src/widgets/custom_math_keyboard.dart';
+import 'package:custom_math_keyboard/src/widgets/view_insets.dart';
 
 /// Widget that is like a [TextField] for math expressions.
 ///
@@ -139,7 +139,7 @@ class _MathFieldState extends State<MathField> with TickerProviderStateMixin {
   OverlayEntry? _overlayEntry;
   late var _focusNode = widget.focusNode ??
       FocusNode(
-        debugLabel: 'math_keyboard_$hashCode',
+        debugLabel: 'custom_math_keyboard_$hashCode',
         descendantsAreFocusable: false,
       );
   late var _controller = widget.controller ?? MathFieldEditingController();
@@ -198,7 +198,7 @@ class _MathFieldState extends State<MathField> with TickerProviderStateMixin {
         assert(oldWidget.focusNode != null);
         // Instantiate new local focus node.
         _focusNode = FocusNode(
-          debugLabel: 'math_keyboard_$hashCode',
+          debugLabel: 'custom_math_keyboard_$hashCode',
           descendantsAreFocusable: false,
         );
       } else {
