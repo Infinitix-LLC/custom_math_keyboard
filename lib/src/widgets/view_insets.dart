@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:custom_math_keyboard/custom_math_keyboard.dart';
+import 'package:custom_math_keyboard/math_keyboard.dart';
 
 /// Widget for math keyboards ensuring the content is pushed up by the
 /// keyboards, connected with [MathField]s.
