@@ -7,7 +7,7 @@ import 'package:custom_math_keyboard/src/foundation/keyboard_button.dart';
 import 'package:custom_math_keyboard/src/foundation/math2tex.dart';
 import 'package:custom_math_keyboard/src/foundation/node.dart';
 import 'package:custom_math_keyboard/src/widgets/decimal_separator.dart';
-import 'package:custom_math_keyboard/src/widgets/custom_math_keyboard.dart';
+import 'package:custom_math_keyboard/src/widgets/math_keyboard.dart';
 import 'package:custom_math_keyboard/src/widgets/view_insets.dart';
 
 /// Widget that is like a [TextField] for math expressions.
