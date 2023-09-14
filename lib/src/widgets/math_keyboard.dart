@@ -280,20 +280,12 @@ class _Buttons extends StatelessWidget {
   const _Buttons({
     Key? key,
     required this.controller,
-    this.page1,
-    this.page2,
     this.onSubmit,
   }) : super(key: key);
 
   /// The editing controller for the math field that the variables are connected
   /// to.
   final MathFieldEditingController controller;
-
-  /// The buttons to display.
-  final List<List<KeyboardButtonConfig>>? page1;
-
-  /// The buttons to display.
-  final List<List<KeyboardButtonConfig>>? page2;
 
   /// Function that is called when the enter / submit button is tapped.
   ///
@@ -466,6 +458,7 @@ class _BasicButton extends StatelessWidget {
         symbol!,
         style: const TextStyle(
           fontSize: 22,
+          fontFamily: 'OpenSans-Reqular',
           color: Colors.white,
         ),
       );

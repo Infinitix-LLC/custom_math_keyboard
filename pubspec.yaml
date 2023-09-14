@@ -2,7 +2,8 @@ name: custom_math_keyboard
 description: >-2
   Math expression editing using an on-screen software keyboard or physical keyboard input in a
   typeset input field in Flutter.
-version: 0.1.0
+version: 0.2.0
+repository: https://github.com/Infinitix-LLC/custom_math_keyboard.git
 
 environment:
   sdk: '>=2.12.0 <4.0.0'
@@ -31,3 +32,6 @@ flutter:
   - family: CustomKeyIcons
     fonts:
     - asset: fonts/CustomKeyIcons.ttf
+  - family: OpenSans
+    fonts:
+    - asset: fonts/OpenSans-Regular.ttf
