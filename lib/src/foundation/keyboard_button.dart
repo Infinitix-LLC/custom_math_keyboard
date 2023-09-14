@@ -279,13 +279,19 @@ final standardKeyboard = [
     _digitButtons[1],
     _digitButtons[2],
     _digitButtons[3],
-    _decimalButton,
+    const BasicKeyboardButtonConfig(
+      label: '=',
+      value: '=',
+      highlighted: true,
+      keyboardCharacters: ['='],
+    ),
     DeleteButtonConfig(),
   ],
   [
     const MainPageButtonConfig(),
     const ThirdPageButtonConfig(),
     _digitButtons[0],
+    _decimalButton,
     PreviousButtonConfig(),
     NextButtonConfig(),
     SubmitButtonConfig(),
@@ -325,123 +331,148 @@ final lettersKeyboard = [
     const BasicKeyboardButtonConfig(
       label: 'q',
       value: 'q',
+      keyboardCharacters: ['q'],
     ),
     const BasicKeyboardButtonConfig(
       label: 'w',
       value: 'w',
+      keyboardCharacters: ['w'],
     ),
     const BasicKeyboardButtonConfig(
       label: 'e',
       value: 'e',
+      keyboardCharacters: ['e'],
     ),
     const BasicKeyboardButtonConfig(
       label: 'r',
       value: 'r',
+      keyboardCharacters: ['r'],
     ),
     const BasicKeyboardButtonConfig(
       label: 't',
       value: 't',
+      keyboardCharacters: ['t'],
     ),
     const BasicKeyboardButtonConfig(
       label: 'y',
       value: 'y',
+      keyboardCharacters: ['y'],
     ),
     const BasicKeyboardButtonConfig(
       label: 'u',
       value: 'u',
+      keyboardCharacters: ['u'],
     ),
     const BasicKeyboardButtonConfig(
       label: 'i',
       value: 'i',
+      keyboardCharacters: ['i'],
     ),
     const BasicKeyboardButtonConfig(
       label: 'o',
       value: 'o',
+      keyboardCharacters: ['o'],
     ),
     const BasicKeyboardButtonConfig(
       label: 'p',
       value: 'p',
+      keyboardCharacters: ['p'],
     ),
   ],
   [
     const BasicKeyboardButtonConfig(
       label: 'a',
       value: 'a',
+      keyboardCharacters: ['a'],
     ),
     const BasicKeyboardButtonConfig(
       label: 's',
       value: 's',
+      keyboardCharacters: ['s'],
     ),
     const BasicKeyboardButtonConfig(
       label: 'd',
       value: 'd',
-    ),
-    const BasicKeyboardButtonConfig(
-      label: 'd',
-      value: 'd',
+      keyboardCharacters: ['d'],
     ),
     const BasicKeyboardButtonConfig(
       label: 'f',
       value: 'f',
+      keyboardCharacters: ['f'],
     ),
     const BasicKeyboardButtonConfig(
       label: 'g',
       value: 'g',
+      keyboardCharacters: ['g'],
     ),
     const BasicKeyboardButtonConfig(
       label: 'h',
       value: 'h',
+      keyboardCharacters: ['h'],
     ),
     const BasicKeyboardButtonConfig(
       label: 'j',
       value: 'j',
+      keyboardCharacters: ['j'],
     ),
     const BasicKeyboardButtonConfig(
       label: 'k',
       value: 'k',
+      keyboardCharacters: ['k'],
     ),
     const BasicKeyboardButtonConfig(
       label: 'l',
       value: 'l',
+      keyboardCharacters: ['l'],
     ),
   ],
   [
     const BasicKeyboardButtonConfig(
       label: 'z',
       value: 'z',
+      keyboardCharacters: ['z'],
     ),
     const BasicKeyboardButtonConfig(
       label: 'x',
       value: 'x',
+      keyboardCharacters: ['x'],
     ),
     const BasicKeyboardButtonConfig(
       label: 'c',
       value: 'c',
+      keyboardCharacters: ['c'],
     ),
     const BasicKeyboardButtonConfig(
       label: 'v',
       value: 'v',
+      keyboardCharacters: ['v'],
     ),
     const BasicKeyboardButtonConfig(
       label: 'b',
       value: 'b',
+      keyboardCharacters: ['b'],
     ),
     const BasicKeyboardButtonConfig(
       label: 'n',
       value: 'n',
+      keyboardCharacters: ['n'],
     ),
     const BasicKeyboardButtonConfig(
       label: 'm',
       value: 'm',
+      keyboardCharacters: ['m'],
     ),
     SubmitButtonConfig(flex: 3),
   ],
   [
     const SecondPageButtonConfig(),
+    const ThirdPageButtonConfig(),
     const BasicKeyboardButtonConfig(
+      flex: 4,
       label: '__',
       value: '\\:',
       highlighted: true,
+      keyboardCharacters: [' '],
     ),
     PreviousButtonConfig(),
     NextButtonConfig(),

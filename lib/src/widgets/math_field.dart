@@ -372,7 +372,7 @@ class _MathFieldState extends State<MathField> with TickerProviderStateMixin {
       if (widget.keyboardType ==
           MathKeyboardType.expression) ...<List<KeyboardButtonConfig>>[
         ...standardKeyboard,
-        ...functionKeyboard,
+        ...lettersKeyboard,
       ] else if (widget.keyboardType == MathKeyboardType.numberOnly) ...[
         ...numberKeyboard,
       ],
@@ -651,6 +651,9 @@ class _FieldPreview extends StatelessWidget {
                   options: MathOptions(
                     fontSize: MathOptions.defaultFontSize,
                     color: Theme.of(context).colorScheme.onSurface,
+                    mathFontOptions: FontOptions(
+                      fontFamily: 'SansSerif',
+                    ),
                   ),
                 ),
               ),
