@@ -88,21 +88,21 @@ class SpaceButtonConfig extends KeyboardButtonConfig {
 }
 
 /// Class representing a button configuration of the Submit Button.
-class MainPageButtonConfig extends KeyboardButtonConfig {
+class FunctionPageButtonConfig extends KeyboardButtonConfig {
   /// Constructs a [SubmitButtonConfig].
-  const MainPageButtonConfig({int? flex}) : super(flex: flex);
+  const FunctionPageButtonConfig({int? flex}) : super(flex: flex);
 }
 
 /// Class representing a button configuration of the Page Toggle Button.
-class SecondPageButtonConfig extends KeyboardButtonConfig {
+class LetterPageButtonConfig extends KeyboardButtonConfig {
   /// Constructs a [PageButtonConfig].
-  const SecondPageButtonConfig({int? flex}) : super(flex: flex);
+  const LetterPageButtonConfig({int? flex}) : super(flex: flex);
 }
 
 /// Class representing a button configuration of the Page Toggle Button.
-class ThirdPageButtonConfig extends KeyboardButtonConfig {
+class StandardPageButtonConfig extends KeyboardButtonConfig {
   /// Constructs a [PageButtonConfig].
-  const ThirdPageButtonConfig({int? flex}) : super(flex: flex);
+  const StandardPageButtonConfig({int? flex}) : super(flex: flex);
 }
 
 /// List of keyboard button configs for the digits from 0-9.
@@ -196,6 +196,12 @@ final functionKeyboard = [
       value: r'\cos^{-1}(',
       asTex: true,
     ),
+    const BasicKeyboardButtonConfig(
+      label: '___',
+      value: '\\:',
+      highlighted: true,
+      keyboardCharacters: [' '],
+    ),
   ],
   [
     const BasicKeyboardButtonConfig(
@@ -221,10 +227,11 @@ final functionKeyboard = [
       value: r'\tan^{-1}(',
       asTex: true,
     ),
+    SubmitButtonConfig(),
   ],
   [
-    const MainPageButtonConfig(),
-    const SecondPageButtonConfig(flex: 3),
+    const LetterPageButtonConfig(),
+    const StandardPageButtonConfig(),
     const BasicKeyboardButtonConfig(
       label: '(',
       value: '(',
@@ -288,8 +295,8 @@ final standardKeyboard = [
     DeleteButtonConfig(),
   ],
   [
-    const MainPageButtonConfig(),
-    const ThirdPageButtonConfig(),
+    const LetterPageButtonConfig(),
+    const FunctionPageButtonConfig(),
     _digitButtons[0],
     _decimalButton,
     PreviousButtonConfig(),
@@ -298,35 +305,7 @@ final standardKeyboard = [
   ],
 ];
 
-/// Keyboard getting shown for letters input only. ==> 0
-final numberKeyboard = [
-  [
-    _digitButtons[7],
-    _digitButtons[8],
-    _digitButtons[9],
-    _subtractButton,
-  ],
-  [
-    _digitButtons[4],
-    _digitButtons[5],
-    _digitButtons[6],
-    _decimalButton,
-  ],
-  [
-    _digitButtons[1],
-    _digitButtons[2],
-    _digitButtons[3],
-    DeleteButtonConfig(),
-  ],
-  [
-    PreviousButtonConfig(),
-    _digitButtons[0],
-    NextButtonConfig(),
-    SubmitButtonConfig(),
-  ],
-];
-
-final lettersKeyboard = [
+final letterKeyboard = [
   [
     const BasicKeyboardButtonConfig(
       label: 'q',
@@ -462,14 +441,14 @@ final lettersKeyboard = [
       value: 'm',
       keyboardCharacters: ['m'],
     ),
-    SubmitButtonConfig(flex: 3),
+    SubmitButtonConfig(),
   ],
   [
-    const SecondPageButtonConfig(),
-    const ThirdPageButtonConfig(),
+    const StandardPageButtonConfig(),
+    const FunctionPageButtonConfig(),
     const BasicKeyboardButtonConfig(
       flex: 4,
-      label: '__',
+      label: '____',
       value: '\\:',
       highlighted: true,
       keyboardCharacters: [' '],

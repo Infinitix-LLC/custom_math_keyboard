@@ -299,11 +299,11 @@ class _Buttons extends StatelessWidget {
       child: AnimatedBuilder(
         animation: controller,
         builder: (context, child) {
-          final layout = controller.mainPage
-              ? lettersKeyboard
-              : controller.secondPage
-                  ? standardKeyboard
-                  : functionKeyboard;
+          final layout = controller.functionPage
+              ? functionKeyboard
+              : controller.letterPage
+                  ? letterKeyboard
+                  : standardKeyboard;
           return Column(
             children: [
               for (final row in layout)
@@ -332,39 +332,39 @@ class _Buttons extends StatelessWidget {
                             iconSize: 22,
                             onTap: () => controller.goBack(deleteMode: true),
                           )
-                        else if (config is MainPageButtonConfig)
+                        else if (config is LetterPageButtonConfig)
                           _BasicButton(
                             flex: config.flex,
                             icon: null,
                             label: 'abc',
                             onTap: () => controller.togglePage(
-                              mainPage: true,
-                              secondPage: false,
-                              thirdPage: false,
+                              functionPage: false,
+                              letterPage: true,
+                              numberPage: false,
                             ),
                             highlightLevel: 1,
                           )
-                        else if (config is SecondPageButtonConfig)
+                        else if (config is StandardPageButtonConfig)
                           _BasicButton(
                             flex: config.flex,
                             icon: null,
                             label: '123',
                             onTap: () => controller.togglePage(
-                              mainPage: false,
-                              secondPage: true,
-                              thirdPage: false,
+                              functionPage: false,
+                              letterPage: false,
+                              numberPage: true,
                             ),
                             highlightLevel: 1,
                           )
-                        else if (config is ThirdPageButtonConfig)
+                        else if (config is FunctionPageButtonConfig)
                           _BasicButton(
                             flex: config.flex,
                             icon: CustomKeyIcons.key_symbols,
                             label: null,
                             onTap: () => controller.togglePage(
-                              mainPage: false,
-                              secondPage: false,
-                              thirdPage: true,
+                              functionPage: true,
+                              letterPage: false,
+                              numberPage: false,
                             ),
                             highlightLevel: 1,
                           )
@@ -384,6 +384,7 @@ class _Buttons extends StatelessWidget {
                           _BasicButton(
                             flex: config.flex,
                             icon: Icons.keyboard_return,
+                            iconColor: Colors.black,
                             onTap: onSubmit,
                             highlightLevel: 2,
                           ),
@@ -406,6 +407,7 @@ class _BasicButton extends StatelessWidget {
     required this.flex,
     this.label,
     this.icon,
+    this.iconColor,
     this.onTap,
     this.asTex = false,
     this.highlightLevel = 0,
@@ -420,6 +422,9 @@ class _BasicButton extends StatelessWidget {
 
   /// Icon for this button.
   final IconData? icon;
+
+  /// The color for the Icon
+  final Color? iconColor;
 
   /// Function to be called on tap.
   final VoidCallback? onTap;
@@ -436,13 +441,13 @@ class _BasicButton extends StatelessWidget {
     if (label == null) {
       result = Icon(
         icon,
-        color: Colors.white,
+        color: iconColor ?? Colors.white,
       );
     } else if (asTex) {
       result = Math.tex(
         label!,
         options: MathOptions(
-          fontSize: 22,
+          fontSize: 17,
           color: Colors.white,
         ),
       );
@@ -457,7 +462,7 @@ class _BasicButton extends StatelessWidget {
       result = Text(
         symbol!,
         style: const TextStyle(
-          fontSize: 22,
+          fontSize: 17,
           fontFamily: 'OpenSans-Reqular',
           color: Colors.white,
         ),
