@@ -369,12 +369,9 @@ class _MathFieldState extends State<MathField> with TickerProviderStateMixin {
     }
 
     final configs = <List<KeyboardButtonConfig>>[
-      if (widget.keyboardType ==
-          MathKeyboardType.expression) ...<List<KeyboardButtonConfig>>[
+      ...<List<KeyboardButtonConfig>>[
+        ...letterKeyboard,
         ...standardKeyboard,
-        ...lettersKeyboard,
-      ] else if (widget.keyboardType == MathKeyboardType.numberOnly) ...[
-        ...numberKeyboard,
       ],
     ].fold<List<KeyboardButtonConfig>>([], (previousValue, element) {
       return previousValue..addAll(element);
@@ -451,6 +448,30 @@ class _MathFieldState extends State<MathField> with TickerProviderStateMixin {
   /// can conclude about the complete key handling from the action taken.
   KeyEventResult? _handleLogicalKey(
       LogicalKeyboardKey logicalKey, List<KeyboardButtonConfig> configs) {
+    if (logicalKey == LogicalKeyboardKey.question) {
+      _controller.addLeaf('?');
+      return KeyEventResult.handled;
+    }
+    if (logicalKey == LogicalKeyboardKey.at) {
+      _controller.addLeaf('@');
+      return KeyEventResult.handled;
+    }
+    if (logicalKey == LogicalKeyboardKey.exclamation) {
+      _controller.addLeaf('!');
+      return KeyEventResult.handled;
+    }
+    if (logicalKey == LogicalKeyboardKey.parenthesisLeft) {
+      _controller.addLeaf('(');
+      return KeyEventResult.handled;
+    }
+    if (logicalKey == LogicalKeyboardKey.parenthesisRight) {
+      _controller.addLeaf(')');
+      return KeyEventResult.handled;
+    }
+    if (logicalKey == LogicalKeyboardKey.equal) {
+      _controller.addLeaf('=');
+      return KeyEventResult.handled;
+    }
     // Check logical, fixed keyboard bindings (like backspace and arrow keys).
     if (logicalKey == LogicalKeyboardKey.backspace &&
         configs.any((element) => element is DeleteButtonConfig)) {
@@ -649,7 +670,7 @@ class _FieldPreview extends StatelessWidget {
                 child: Math.tex(
                   tex,
                   options: MathOptions(
-                    fontSize: MathOptions.defaultFontSize,
+                    fontSize: 15,
                     color: Theme.of(context).colorScheme.onSurface,
                     mathFontOptions: FontOptions(
                       fontFamily: 'SansSerif',
@@ -681,9 +702,9 @@ class MathFieldEditingController extends ChangeNotifier {
   }
 
   /// Type of the Keyboard.
-  bool mainPage = true;
-  bool secondPage = false;
-  bool thirdPage = false;
+  bool functionPage = true;
+  bool letterPage = false;
+  bool numberPage = false;
 
   /// The root node of the expression.
   TeXNode root = TeXNode(null);
@@ -983,13 +1004,13 @@ class MathFieldEditingController extends ChangeNotifier {
 
   /// Switches between Page 1 and 2.
   void togglePage({
-    required bool mainPage,
-    required bool secondPage,
-    required bool thirdPage,
+    required bool functionPage,
+    required bool letterPage,
+    required bool numberPage,
   }) {
-    this.mainPage = mainPage;
-    this.secondPage = secondPage;
-    this.thirdPage = thirdPage;
+    this.functionPage = functionPage;
+    this.letterPage = letterPage;
+    this.numberPage = numberPage;
     notifyListeners();
   }
 
