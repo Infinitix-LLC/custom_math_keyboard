@@ -227,7 +227,7 @@ final functionKeyboard = [
       value: r'\tan^{-1}(',
       asTex: true,
     ),
-    SubmitButtonConfig(),
+    DeleteButtonConfig()
   ],
   [
     const LetterPageButtonConfig(),
@@ -244,9 +244,12 @@ final functionKeyboard = [
       highlighted: true,
       keyboardCharacters: [')'],
     ),
-    PreviousButtonConfig(),
-    NextButtonConfig(),
-    DeleteButtonConfig(),
+    PreviousButtonConfig(
+      flex: 3,
+    ),
+    NextButtonConfig(
+      flex: 3,
+    ),
   ],
 ];
 
@@ -299,9 +302,12 @@ final standardKeyboard = [
     const FunctionPageButtonConfig(),
     _digitButtons[0],
     _decimalButton,
-    PreviousButtonConfig(),
-    NextButtonConfig(),
-    SubmitButtonConfig(),
+    PreviousButtonConfig(
+      flex: 3,
+    ),
+    NextButtonConfig(
+      flex: 3,
+    ),
   ],
 ];
 
@@ -441,7 +447,7 @@ final letterKeyboard = [
       value: 'm',
       keyboardCharacters: ['m'],
     ),
-    SubmitButtonConfig(),
+    DeleteButtonConfig(),
   ],
   [
     const StandardPageButtonConfig(),
@@ -453,8 +459,11 @@ final letterKeyboard = [
       highlighted: true,
       keyboardCharacters: [' '],
     ),
-    PreviousButtonConfig(),
-    NextButtonConfig(),
-    DeleteButtonConfig(),
+    PreviousButtonConfig(
+      flex: 3,
+    ),
+    NextButtonConfig(
+      flex: 3,
+    ),
   ],
 ];

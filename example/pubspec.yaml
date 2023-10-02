@@ -1,0 +1,26 @@
+name: example
+description: An example on how to use the custom_math_keyboard package.
+publish_to: 'none'
+
+version: 1.0.0
+
+environment:
+  sdk: '>=3.0.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  custom_math_keyboard:
+    path: ../
+
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+
+  uses-material-design: true

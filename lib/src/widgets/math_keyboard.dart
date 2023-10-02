@@ -516,7 +516,7 @@ class _NavigationButton extends StatelessWidget {
       child: KeyboardButton(
         onTap: onTap,
         onHold: onTap,
-        color: Colors.grey[900],
+        color: Colors.blue,
         child: Icon(
           icon,
           color: Colors.white,
