@@ -1,3 +1,8 @@
+## 0.2.2
+
+* Added an example on how to use the package.
+* layout improvements.
+
 ## 0.2.1
 
 * changed initial layout.
