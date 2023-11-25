@@ -137,6 +137,7 @@ final functionKeyboard = [
     const BasicKeyboardButtonConfig(
       label: r'\frac{\Box}{\Box}',
       value: r'\frac',
+      flex: 3,
       args: [TeXArg.braces, TeXArg.braces],
       asTex: true,
     ),
@@ -175,6 +176,7 @@ final functionKeyboard = [
     const BasicKeyboardButtonConfig(
       label: r'\sqrt{\Box}',
       value: r'\sqrt',
+      flex: 3,
       args: [TeXArg.braces],
       asTex: true,
       keyboardCharacters: ['r'],
@@ -207,6 +209,7 @@ final functionKeyboard = [
     const BasicKeyboardButtonConfig(
       label: r'\log_{\Box}(\Box)',
       value: r'\log_',
+      flex: 3,
       asTex: true,
       args: [TeXArg.braces, TeXArg.parentheses],
     ),

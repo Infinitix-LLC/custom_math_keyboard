@@ -2,7 +2,7 @@ name: custom_math_keyboard
 description: >-2
   Math keyboard built on top of math_keyboard package for editing math expression using
   an on-screen software keyboard or physical keyboard input in a typeset input field in Flutter.
-version: 0.2.2
+version: 0.2.3
 repository: https://github.com/Infinitix-LLC/custom_math_keyboard.git
 
 environment:

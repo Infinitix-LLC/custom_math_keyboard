@@ -1,3 +1,7 @@
+## 0.2.3
+
+* Small screens overflow fix.
+
 ## 0.2.2
 
 * Added an example on how to use the package.
